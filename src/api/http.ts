@@ -1,8 +1,7 @@
 import type { SearchParams } from '../types';
 
 const API_BASE_URL = 'https://kinopoiskapiunofficial.tech/api';
-// Vite подставляет значение из .env через define в vite.config.ts.
-// Такой способ также позволяет Jest запускать модуль без синтаксиса import.meta.
+
 const API_KEY = process.env.VITE_KINOPOISK_API_KEY?.trim();
 
 export async function httpGet<T>(path: string, params: SearchParams = {}): Promise<T> {

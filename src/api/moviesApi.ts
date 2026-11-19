@@ -91,12 +91,10 @@ async function requestMovies(path: string, params: Record<string, string | numbe
   return parseMoviesResponse(raw).films.map(normalizeMovie);
 }
 
-// Получаем популярные фильмы. Ответ API проверяется до преобразования в Movie.
 export function getMovies(page = 1): Promise<Movie[]> {
   return requestMovies('/v2.2/films/top', { type: 'TOP_100_POPULAR_FILMS', page });
 }
 
-// Поиск фильмов по ключевым словам.
 export function searchMovies(keyword: string, page = 1): Promise<Movie[]> {
   return requestMovies('/v2.1/films/search-by-keyword', { keyword, page });
 }

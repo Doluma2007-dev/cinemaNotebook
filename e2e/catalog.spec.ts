@@ -38,7 +38,6 @@ test('пользователь добавляет фильм в список ж�
   await expect(interstellarCard).toBeVisible();
   await interstellarCard.getByRole('button', { name: '+ Желаемое' }).click();
 
-  // Открываем именно пункт навигации, а не кнопку сохранения в карточке.
   await page.locator('header nav button').nth(1).click();
 
   await expect(page.getByRole('heading', { name: 'Список желаемого' })).toBeVisible();
